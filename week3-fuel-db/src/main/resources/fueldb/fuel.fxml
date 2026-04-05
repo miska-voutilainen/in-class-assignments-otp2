@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fueldb.FuelController"
+      spacing="12">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10">
+        <Label fx:id="lblDistance" text="Distance (km):" minWidth="220"/>
+        <TextField fx:id="txtDistance" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label fx:id="lblConsumption" text="Fuel Consumption (L/100 km):" minWidth="220"/>
+        <TextField fx:id="txtConsumption" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label fx:id="lblPrice" text="Fuel Price (per liter):" minWidth="220"/>
+        <TextField fx:id="txtPrice" prefWidth="150"/>
+    </HBox>
+
+    <Button fx:id="btnCalculate" text="Calculate Trip Cost" onAction="#handleCalculate"/>
+
+    <Label fx:id="lblResult" text="" wrapText="true"/>
+
+    <HBox spacing="8">
+        <Button fx:id="btnEN" text="EN" onAction="#switchEN"/>
+        <Button fx:id="btnFR" text="FR" onAction="#switchFR"/>
+        <Button fx:id="btnJP" text="JP" onAction="#switchJP"/>
+        <Button fx:id="btnIR" text="IR" onAction="#switchIR"/>
+    </HBox>
+</VBox>
