@@ -8,9 +8,13 @@ public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
-        int result = addMe(12, 4);
+        FuelCalculator calculator = new FuelCalculator();
+        CalculationRecord result = calculator.calculate(500, 7.5, 1.85);
         if (logger.isLoggable(Level.INFO)) {
-            logger.info(String.format("Result of addMe(12, 4): %d", result));
+            logger.info(String.format(
+                "Distance: %.1f km | Fuel used: %.2f L | Total cost: %.2f EUR",
+                result.getDistance(), result.getTotalFuel(), result.getTotalCost()
+            ));
         }
     }
 
