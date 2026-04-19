@@ -1,0 +1,5 @@
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y xterm openjdk-17-jre-headless && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY target/week5-jenkins-1.0.jar app.jar
+CMD ["xterm", "-fa", "Monospace", "-fs", "14", "-T", "Miska Voutilainen - Fuel Calculator", "-e", "java -jar /app/app.jar; echo ''; echo 'Press Enter to close'; read"]
